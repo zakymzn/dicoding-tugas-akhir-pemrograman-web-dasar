@@ -32,6 +32,10 @@ window.onscroll = function () {
     }
 }
 
+// Social media icon
+const socialMediaIconLight = document.querySelectorAll('.social-media-icon-light');
+const socialMediaIconDark = document.querySelectorAll('.social-media-icon-dark');
+
 // Dark Mode & Local Storage
 const darkMode = document.querySelector('.material-symbols-outlined');
 
@@ -61,6 +65,12 @@ const disableDarkMode = () => {
 
 if (dark === 'enabled') {
     enableDarkMode();
+    socialMediaIconLight.forEach(el => el.classList.add('hidden'));
+    socialMediaIconDark.forEach(el => el.classList.remove('hidden'));
+} else {
+    disableDarkMode();
+    socialMediaIconDark.forEach(el => el.classList.add('hidden'));
+    socialMediaIconLight.forEach(el => el.classList.remove('hidden'));
 }
 
 darkToggle.addEventListener('click', () => {
@@ -68,7 +78,17 @@ darkToggle.addEventListener('click', () => {
 
     if (dark !== 'enabled') {
         enableDarkMode();
+        socialMediaIconLight.forEach(el => el.classList.add('hidden'));
+        socialMediaIconDark.forEach(el => el.classList.remove('hidden'));
     } else {
         disableDarkMode();
+        socialMediaIconDark.forEach(el => el.classList.add('hidden'));
+        socialMediaIconLight.forEach(el => el.classList.remove('hidden'));
     }
-})
+});
+
+// Footer
+const currentYear = new Date().getFullYear();
+const footer = document.querySelector('footer');
+
+footer.innerHTML = `&copy; Ma'mur Zaky Nurrokhman ${currentYear}`;

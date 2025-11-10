@@ -76,6 +76,7 @@ nav {
     overflow: auto;
     transition: all;
     transition-duration: 500ms;
+    z-index: 9999;
 }
 
 .dark .dark\:#navigation {
@@ -291,6 +292,10 @@ div span {
     transition-duration: 500ms;
 }
 
+.makna-lambang:hover {
+    scale: 105%;
+}
+
 .dark .dark\:makna-lambang {
     background-color: #05445E;
 }
@@ -323,7 +328,6 @@ div span {
     border-style: none;
     border-radius: 100em;
     width: 10em;
-    text-align: center;
     padding: 10px 20px 10px 20px;
     margin: 2em 0 2em 0;
     transition: all;
@@ -333,6 +337,9 @@ div span {
     font-weight: bold;
     text-decoration: none;
     color: #05445E;
+    display: flex;
+    gap: 1em;
+    justify-content: center;
 }
 
 .maps:hover {
@@ -372,6 +379,22 @@ figure img {
 #biodata b {
     color: #189AB4;
 }
+
+/* Social media icon design start */
+#social-media {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+}
+
+.social-media-icon-light, .social-media-icon-dark {
+    width: 2em;
+    height: 2em;
+    object-fit: fit;
+}
+/* Social media icon design end */
+
 /* Biodata design end */
 
 /* Footer design start */
